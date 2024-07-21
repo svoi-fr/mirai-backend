@@ -1,0 +1,11 @@
+pymongo
+streamlit
+neo4j
+grpcio-tools
+chardet
+bs4
+python-dotenv
+langdetect
+scrapy
+git+https://github.com/svoi-fr/trafilatura
+
