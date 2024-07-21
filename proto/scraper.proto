@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package scraper;
+import "google/protobuf/empty.proto";
+
+// The scraper service definition.
+service Scraper {
+  // Sends a new scraping job request.
+  rpc AddScrapingJob (ScrapingJob) returns (ScrapingJobList);
+  rpc GetScrapingJobs (google.protobuf.Empty) returns (ScrapingJobList);
+}
+
+// The request message containing the details of the scraping job.
+message ScrapingJob {
+  string url = 1;
+ Response string mode = 2;
+  repeated string partitions = 3;
+  string source_type = 4;
+  string pattern_mode = 5;
+  string pattern = 6;
+  string status = 7;
+  int32 progress = 8;
+}
+
+// The response message containing the status of the scraping job request.
+message ScrapingJobList {
+  string status = 1;
+  string message = 2;
+  repeated ScrapingJob = 3;
+}
